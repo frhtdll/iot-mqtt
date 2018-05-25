@@ -21,7 +21,7 @@ port =
 user = ""
 password = ""
  
-client = mqttClient.Client("Python")             
+client = mqttClient.Client("MqttClient")             
 client.username_pw_set(user, password=password)   
 client.on_connect= on_connect                      
 client.connect(broker_address, port=port)          
@@ -35,7 +35,7 @@ try:
     while True:
  
         value = raw_input('Enter the message:')
-        client.publish("python/test",value)
+        client.publish("sesnor/temp",value)
  
 except KeyboardInterrupt:
  
